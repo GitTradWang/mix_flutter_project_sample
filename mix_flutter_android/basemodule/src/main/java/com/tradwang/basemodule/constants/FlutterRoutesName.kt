@@ -1,4 +1,4 @@
-package com.tradwang.fluttermodule
+package com.tradwang.basemodule.constants
 
 const val NATIVE_PAGE_SUFFIX = "/nativePage"
 

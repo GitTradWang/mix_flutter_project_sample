@@ -3,8 +3,9 @@ package com.tradwang.flutter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.tradwang.fluttermodule.FlutterRoutesName
-import com.tradwang.fluttermodule.NativeRoutesName
+import com.tradwang.basemodule.constants.FlutterRoutesName
+import com.tradwang.basemodule.constants.NativeRoutesName
+
 import com.tradwang.fluttermodule.PageRouter
 import kotlinx.android.synthetic.main.activity_main.*
 

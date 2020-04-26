@@ -7,6 +7,8 @@ import android.util.Log
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.launcher.ARouter
 import com.idlefish.flutterboost.containers.BoostFlutterActivity
+import com.tradwang.basemodule.constants.FLUTTER_PAGE_SUFFIX
+import com.tradwang.basemodule.constants.NATIVE_PAGE_SUFFIX
 import java.io.Serializable
 
 object PageRouter {
@@ -39,7 +41,6 @@ object PageRouter {
     private fun <K, V> Map<K, V>?.safe(): Map<K, V> {
         return this ?: mapOf()
     }
-
 
     private fun Postcard.withMap(map: Map<String, Any?>?): Postcard {
         map?.forEach { entry ->

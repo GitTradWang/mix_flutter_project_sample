@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_boost/flutter_boost.dart';
 import 'package:mix_flutter_flutter/constant/page_routes.dart';
 
@@ -14,7 +15,8 @@ class _AppState extends State<App> {
   void initState() {
     super.initState();
     FlutterBoost.singleton.registerPageBuilders(PageRoutes.routes);
-    FlutterBoost.singleton.addBoostNavigatorObserver(TestBoostNavigatorObserver());
+    FlutterBoost.singleton
+        .addBoostNavigatorObserver(TestBoostNavigatorObserver());
   }
 
   @override
@@ -23,11 +25,18 @@ class _AppState extends State<App> {
       title: 'Flutter Boost example',
       builder: FlutterBoost.init(postPush: _onRoutePushed),
       home: Container(color: Colors.white),
+      theme: ThemeData(
+        primaryColor: Color(0xFF6200EE),
+        primaryColorDark: Color(0xFF3700B3),
+        accentColor: Color(0xFF03DAC5),
+      ),
     );
   }
 
-  void _onRoutePushed(String pageName, String uniqueId, Map params, Route route, Future _) {
-    print("pageName: $pageName ,uniqueId: $uniqueId ,params: $params ,route: $route");
+  void _onRoutePushed(
+      String pageName, String uniqueId, Map params, Route route, Future _) {
+    print(
+        "pageName: $pageName ,uniqueId: $uniqueId ,params: $params ,route: $route");
   }
 }
 
@@ -54,6 +63,7 @@ class TestPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        brightness:Brightness.dark,
         centerTitle: true,
         title: Text("FLUTTER"),
       ),
@@ -63,7 +73,9 @@ class TestPage extends StatelessWidget {
           child: Column(
             children: <Widget>[
               InkWell(
-                onTap: () => FlutterBoost.singleton.open(FlutterRoutesName.TEST_PAGE, urlParams: {'ccc': 3, "ddd": 4}),
+                onTap: () => FlutterBoost.singleton.open(
+                    FlutterRoutesName.TEST_PAGE,
+                    urlParams: {'ccc': 3, "ddd": 4}),
                 child: Container(
                   width: 150,
                   height: 40,
@@ -75,7 +87,9 @@ class TestPage extends StatelessWidget {
                 height: 50,
               ),
               InkWell(
-                onTap: () => FlutterBoost.singleton.open(NativeRoutesName.MAIN_PAGE, urlParams: {'ccc': 3, "ddd": 4}),
+                onTap: () => FlutterBoost.singleton.open(
+                    NativeRoutesName.MAIN_PAGE,
+                    urlParams: {'ccc': 3, "ddd": 4}),
                 child: Container(
                   width: 150,
                   height: 40,

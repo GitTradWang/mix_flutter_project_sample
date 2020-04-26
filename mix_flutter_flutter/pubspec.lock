@@ -74,10 +74,10 @@ packages:
     description:
       path: "."
       ref: "v1.12.13-hotfixes"
-      resolved-ref: "9c0fda37033618e6701890f8b552dd2d4e674ef8"
+      resolved-ref: bdcc488ebd902f791bb56d2f6e02eeb7360c5031
       url: "https://github.com/alibaba/flutter_boost.git"
     source: git
-    version: "1.12.13"
+    version: "1.12.13+1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
